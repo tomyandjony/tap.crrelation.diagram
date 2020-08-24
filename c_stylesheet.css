@@ -1,0 +1,99 @@
+/* 設定初期化 */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ここからcharacter-wrapper */
+.character-wrapper{
+    background-color: #f7f7f7;
+}
+
+/*.image-circle{        背景画像を用いた円形トリミング
+    margin: 10px;
+    background-image: url("./img/CampasDomitory.jpg");
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    border: 5px solid black;
+    display: inline-block;
+}*/
+
+.character-image{
+    margin: 10px;
+    /* background-image: url("./img/CampasDomitory.jpg"); */
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* size: cover; */
+    /* background-position: center; */
+    /* background-size: cover; */
+    border: 5px solid black;
+    display: inline-block;
+}
+
+.character{
+    text-align: center;
+    float: left;
+}
+
+.c-container{
+    padding: 40px;
+}
+
+
+/* 吹き出し生成 */
+.arrow_box{
+    position:relative;
+    width:300px;
+    height:150px;
+    background:#C9C9C9;
+    padding:10px;
+    text-align:left;
+    color:#FFFFFF;
+    font-size:15px;
+    font-weight:bold;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    display: none;
+}
+.arrow_box:after{
+    border: solid transparent;
+    content:'';
+    height:0;
+    width:0;
+    pointer-events:none;
+    position:absolute;
+    border-color: rgba(201, 201, 201, 0);
+    border-top-width:24px;
+    border-bottom-width:24px;
+    border-left-width:19px;
+    border-right-width:19px;
+    margin-left: -19px;
+    border-top-color:#C9C9C9;
+    top:100%;
+    left:25%;
+    display: none;
+}
+
+.character-icon:hover + .arrow_box{
+    display: block;
+}

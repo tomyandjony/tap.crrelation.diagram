@@ -20,6 +20,35 @@ a {
 
 /* 初期化設定ここまで */
 
+/* 端末による横幅調整 */
+@media(max-width:670px){
+  .content{
+    width:100%;
+  }
+
+  footer{
+    text-align: center;
+  }
+
+  .btn{
+    width: 100%;
+  }
+
+  .facebook{
+    margin-bottom: 10px;
+  }
+
+  /* .header-rigth{
+    display: none;
+    /* デフォルトのメニューの非表示 */
+  /* }
+
+  .menu-icon{
+    display: block;
+    /* メニューアイコンの表示 */
+  /* } */ 
+}
+
 /* ヘッダー */
 header {
     height: 65px;

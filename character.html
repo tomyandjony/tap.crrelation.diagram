@@ -1,125 +1,96 @@
-<!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="utf=8">
-        <title>>TAP Correlation Diagram</title>
-        <link rel="icon" href="img/tap_icon.ico">
-        <meta name="deseription" content="TAP相関図">
-        <link rel="stylesheet" href="stylesheet.css">
-        <link rel="stylesheet" href="c_stylesheet.css">
-        <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
-        <!-- fontAwesomeの読み込み -->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    </head>
+/* 設定初期化 */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
 
-    <body>
-        <header>
-            <div class="container">
-                <div class="header-left">
-                   <a href="./index.html" class="home">HOME</a> 
-                   <!-- <a href="#" class="Character">キャラクター</a> -->
-                </div>
+body {
+  font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
 
-                <div class="header-right">
-                    <a href="#" class="inquire">お問い合わせ</a>
-                </div>
-            </div>
-            
-        </header>
+li {
+  list-style: none;
+}
 
-        <div class="top-wrapper">
-            <div class="container">
-                <h1>キャラクター紹介</h1>
-            </div>
-        </div>
+a {
+  text-decoration: none;
+}
 
-        <div class="character-wrapper">
-            <div class="c-container">
-                <div class="character">
-                    
-                    <div class="character-icon">
-                        <div class='arrow_box'>吹き出し</div>
-                        <img class="character-image" src="./img/CampasDomitory.jpg" alt="寮">
-                        <p>がくせいりょう</p>
-                    </div>
-                    <p class="text-content">りょうだよ</p>
-                </div>
+/* ここからcharacter-wrapper */
+.character-wrapper{
+    background-color: #f7f7f7;
+}
 
-                <div class="character">
-                    <div class="character-icon">
-                        <img class="character-image" src="./img/CampasDomitory.jpg" alt="寮">
-                        <p>がくせいりょう</p>
-                    </div>
-                    <p class="text-content">りょうだよ</p>
-                </div>
+/*.image-circle{        背景画像を用いた円形トリミング
+    margin: 10px;
+    background-image: url("./img/CampasDomitory.jpg");
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    border: 5px solid black;
+    display: inline-block;
+}*/
 
-                <div class="character">
-                    <div class="character-icon">
-                        <img class="character-image" src="./img/CampasDomitory.jpg" alt="寮">
-                        <p>がくせいりょう</p>
-                    </div>
-                    <p class="text-content">りょうだよ</p>
-                </div>
+/* キャラクター画像css */
+.tooltip5 img{
+    margin: 10px;
+    /* background-image: url("./img/CampasDomitory.jpg"); */
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* size: cover; */
+    /* background-position: center; */
+    /* background-size: cover; */
+    border: 5px solid black;
+    display: inline-block;
+}
 
-                <div class="character">
-                    <div class="character-icon">
-                        <img class="character-image" src="./img/CampasDomitory.jpg" alt="寮">
-                        <p>がくせいりょう</p>
-                    </div>
-                    <p class="text-content">りょうだよ</p>
-                </div>
+/* キャラクター画像hover時に吹き出しテキストをポップアップ */
 
-                <div class="character">
-                    <div class="character-icon">
-                        <img class="character-image" src="./img/CampasDomitory.jpg" alt="寮">
-                        <p>がくせいりょう</p>
-                    </div>
-                    <p class="text-content">りょうだよ</p>
-                </div>
+.tooltip5{
+  position: relative;
+  cursor: pointer;
+  display:  inline-block;
+}
 
-                <div class="character">
-                    <div class="character-icon">
-                        <img class="character-image" src="./img/CampasDomitory.jpg" alt="寮">
-                        <p>がくせいりょう</p>
-                    </div>
-                    <p class="text-content">りょうだよ</p>
-                </div>
+.description5 {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.6em;
+  color: #fff;
+  border-radius: 5px;
+  background: #000;
+  width: 250px;
+}
 
-                <div class="character">
-                    <div class="character-icon">
-                        <img class="character-image" src="./img/CampasDomitory.jpg" alt="寮">
-                        <p>がくせいりょう</p>
-                    </div>
-                    <p class="text-content">りょうだよ</p>
-                </div>
+.description5:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 15px solid transparent;
+  border-top: 15px solid #000;
+  margin-left: -15px;
+}
+/* 吹き出しの位置調整 */
+.tooltip5:hover .description5{
+  display: inline-block;
+  top: -50px;
+  left: 0px;
+}
 
-                <div class="character">
-                    <div class="character-icon">
-                        <img class="character-image" src="./img/CampasDomitory.jpg" alt="寮">
-                        <p>がくせいりょう</p>
-                    </div>
-                    <p class="text-content">りょうだよ</p>
-                </div>
+.character{
+    text-align: center;
+    float: left;
+}
 
-                <div class="character">
-                    <div class="character-icon">
-                        <img class="character-image" src="./img/CampasDomitory.jpg" alt="寮">
-                        <p>がくせいりょう</p>
-                    </div>
-                    <p class="text-content">りょうだよ</p>
-                </div>
-
-                <div class="character">
-                    <div class="character-icon">
-                        <img class="character-image" src="./img/CampasDomitory.jpg" alt="寮">
-                        <p>がくせいりょう</p>
-                    </div>
-                    <p class="text-content">りょうだよ</p>
-                </div>
-                <!-- <p class="image-circle"></p>
-                <p class="character-name">学生寮</p> -->
-            </div>
-            
-        </div>
-    </body>
-</html>
+.c-container{
+    padding: 40px;
+}
